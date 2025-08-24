@@ -1,0 +1,26 @@
+{:paths ["resources" "src/clj" "src/cljs"]
+
+ :deps
+ {org.clojure/clojure             {:mvn/version "1.11.1"}
+  org.clojure/clojurescript       {:mvn/version "1.12.42"}
+  hiccup/hiccup                   {:mvn/version "2.0.0"}
+  org.clojure/data.csv            {:mvn/version "1.0.1"}
+  org.clojure/data.json           {:mvn/version "2.5.1"}
+  org.slf4j/slf4j-simple          {:mvn/version "2.0.7"}}
+
+ :aliases
+ {
+  :clj-build    {:main-opts ["-m" "dev.build-clj"]}
+
+  :cljs-dev     {:main-opts ["-m" "dev.build-cljs" "dev"]}
+  :cljs-build   {:main-opts ["-m" "dev.build-cljs" "prod"]}
+
+  :serve        {:extra-deps    {ring/ring-core             {:mvn/version "1.10.0"}
+                                 ring/ring-jetty-adapter    {:mvn/version "1.10.0"}}
+                 :main-opts ["-m" "dev.server"]}
+
+  :lint         {:extra-deps    {clj-kondo/clj-kondo {:mvn/version "2025.06.05"}}
+                 :main-opts ["-m" "clj-kondo.main" "--lint" "src"]}
+
+  :fix          {:extra-deps    {dev.weavejester/cljfmt {:mvn/version "0.13.1"}}
+                 :main-opts ["-m" "cljfmt.main" "fix" "src"]}}}

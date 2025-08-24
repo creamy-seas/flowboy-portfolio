@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  /** Define the colours that can be used text-COLOURNAME across the app */
+  --color-myflame: #55ff55ff;
+  --color-bg: #111;
+  --color-fg: #eee;
+
+  /** Max size off the page */
+  --size-root: 850px;
+}
+
+@layer base {
+
+  html {
+    /* Keep scrollbar stable so that gallery does not change width */
+    scrollbar-gutter: stable;
+    /* Paint everything black that is not coloured */
+    background-color: var(--color-bg) !important;
+  }
+
+  body {
+    /** Page content is centered and coloured */
+    @apply min-h-screen flex justify-center p-8 bg-bg text-fg;
+  }
+  a {
+    /** Bold instead of underline the links */
+    @apply font-semibold no-underline hover:underline;
+  }
+  #root {
+    /** Constrain the page size */
+    width: 100%;
+    max-width: var(--size-root);
+  }
+}
