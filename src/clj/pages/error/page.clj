@@ -15,7 +15,7 @@
      [:div
       {:class "absolute inset-0
                rounded-lg
-               bg-gradient-to-br from-myflame via-orange-300/60 to-transparent
+               bg-gradient-to-br from-mytheme via-green-300/60 to-transparent
                filter blur-2xl"}]
      [:img
       {:src   (url/put-on-base "/assets/favicon.svg")

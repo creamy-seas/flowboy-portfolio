@@ -50,8 +50,8 @@
   "Website name with link to root page"
   []
   [:header.text-center.my-8
-   [:a.text-myflame.text-3xl.font-bold
-    {:class "decoration-myflame underline-offset-4 hover:text-myflame/80 select-none"
+   [:a.text-mytheme.text-3xl.font-bold
+    {:class "decoration-mytheme underline-offset-4 hover:text-mytheme/80 select-none"
      :href (url/put-on-base "/")}
     (:title cfg/config)]
    [:div.no-js-only.py-3

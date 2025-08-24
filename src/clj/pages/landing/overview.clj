@@ -19,11 +19,11 @@
   []
   (mapcat
    (fn [[label value]]
-     (let [key-node [:dt.font-semibold.text-myflame (str label ":")]
+     (let [key-node [:dt.font-semibold.text-mytheme (str label ":")]
            href     (when (= label "Season")
                       (url/put-on-base (str "gallery?season=" value)))
            val-node (if href
-                      [:a.underline.hover:text-myflame
+                      [:a.underline.hover:text-mytheme
                        {:href href}
                        value]
                       (str value))]

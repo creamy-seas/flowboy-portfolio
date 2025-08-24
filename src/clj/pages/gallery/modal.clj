@@ -5,8 +5,8 @@
   ;; Very tedious css class to ensure nice clicky navigation arrows
   "absolute top-1/2 -translate-y-1/2 w-12 h-40
   flex items-center justify-center
-  bg-fg/20 text-bg/40 ring-myflame/20 ring-2
-  hover:bg-myflame hover:text-bg active:bg-myflame active:text-bg
+  bg-fg/20 text-bg/40 ring-mytheme/20 ring-2
+  hover:bg-mytheme hover:text-bg active:bg-mytheme active:text-bg
   transition-colors duration-200")
 
 (defn render
@@ -32,5 +32,5 @@
        :src             ""
        :allowfullscreen ""
        :title           ""}]]
-    [:h3#gallery-modal-description.text-xl.font-semibold.text-myflame.mt-4 ""]
+    [:h3#gallery-modal-description.text-xl.font-semibold.text-mytheme.mt-4 ""]
     [:p#gallery-modal-date.text-sm.text-gray-400 ""]]])
