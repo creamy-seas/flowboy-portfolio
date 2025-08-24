@@ -1,0 +1,8 @@
+{:title             "🏒 Flowboy Webpage 🏒"
+ :title-tag-landing "Flowboy Webpage"
+ :title-tag-gallery "Flowboy Gallery"
+ :team              "Learn to Skate"
+ :name              "Vsevolod Antonov"
+ :bday              "2022-03-04"
+ :base              "/flowboy-portfolio"
+ :goat-counter-url  "https://flowboy-portfolio.goatcounter.com/count"}
