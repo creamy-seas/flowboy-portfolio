@@ -8,7 +8,7 @@
   - Each enty has a url made that will be fetched if clicked"
   []
   (->> (data/read-csv "data/gallery.csv")
-       (sort-by :date compare)
+       (sort-by :date #(compare %2 %1))
        (map-indexed
         (fn [index {:keys [id type] :as entry}]
           (assoc entry
