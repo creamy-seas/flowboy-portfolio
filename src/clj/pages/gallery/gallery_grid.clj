@@ -16,7 +16,7 @@
   [:section#gallery-grid.js-only.container.select-none
    (for [[season items] (gallery/group-gallery gallery-data)]
      [:div.collapse.collapse-arrow.rounded-none.rounded-t-lg {:gallery-season-key season}
-      [:summary {:class "collapse-title text-xl font-semibold bg-myflame/80 text-bg"} season]
+      [:summary {:class "collapse-title text-xl font-semibold bg-mytheme/80 text-bg"} season]
       [:div.collapse-content.p-2
        [:div.grid.grid-cols-2.sm:grid-cols-3.md:grid-cols-4.gap-4
         (map gallery-card-js items)]]])])
@@ -35,7 +35,7 @@
   [:section.no-js-only.container.select-none.space-y-4
    (for [[season items] (gallery/group-gallery gallery-data)]
      [:details.collapse.collapse-arrow.rounded-none.rounded-t-lg {:key season}
-      [:summary {:class "collapse-title text-xl font-semibold bg-myflame/80 text-bg"} season]
+      [:summary {:class "collapse-title text-xl font-semibold bg-mytheme/80 text-bg"} season]
       [:div.collapse-content.p-2
        [:div.grid.grid-cols-2.sm:grid-cols-3.md:grid-cols-4.gap-4
         (map gallery-card-no-js items)]]])])
