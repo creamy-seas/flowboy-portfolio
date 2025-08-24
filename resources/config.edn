@@ -2,7 +2,8 @@
  :title-tag-landing "Flowboy Webpage"
  :title-tag-gallery "Flowboy Gallery"
  :team              "Learn to Skate"
- :name              "Vsevolod Antonov"
+ :name              "Seva Antonov"
  :bday              "2022-03-04"
  :base              "/flowboy-portfolio"
+ :brother-link      "https://creamy-seas.github.io/bigv-portfolio/"
  :goat-counter-url  "https://flowboy-portfolio.goatcounter.com/count"}

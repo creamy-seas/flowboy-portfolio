@@ -16,14 +16,21 @@
    ;; Flip <html> class from no-js -> js ASAP (runs before first paint) if js is enabled
    [:script "(d=>d.classList.replace('no-js','js'))(document.documentElement)"]
 
-   ;; Hide/show sections when javascript enabled/disabled
-   ;; This is done by:
-   ;; 1. Annotatating js-dependent components with `js-only`  or `no-js-only`
-   ;; 2. Running the script above that adds replaces html.no-js with html.js when javascript is enabled, which hides the no-js-only elements
-   ;; 3. If js in not enabled, then the opposite occurs
    [:style
-    "html.no-js .js-only{display:none!important}
-     html.js .no-js-only{display:none!important}"]
+    (str
+     ;; Hide/show sections when javascript enabled/disabled
+     ;; This is done by:
+     ;; 1. Annotatating js-dependent components with `js-only`  or `no-js-only`
+     ;; 2. Running the script above that adds replaces html.no-js with html.js when javascript is enabled, which hides the no-js-only elements
+     ;; 3. If js in not enabled, then the opposite occurs
+     "html.no-js .js-only{display:none!important}"
+     "html.js .no-js-only{display:none!important}"
+
+     ;; Styles for the brother hyperlink
+     "#to-brother{width:100px;height:92px;background-repeat:no-repeat;"
+     "background-position:center;background-size:100px 92px;"
+     "background-image:url('" (url/put-on-base "/assets/brother-me.svg") "');}"
+     "#to-brother:hover{background-image:url('" (url/put-on-base "/assets/brother-to-brother.svg") "');}")]
 
    ;; --- Meta & base ---
    [:meta {:charset "UTF-8"}]
@@ -47,15 +54,23 @@
    (for [p extra-elements] p)])
 
 (defn header
-  "Website name with link to root page"
+  "Website name with link to root page and brother website"
   []
-  [:header.text-center.my-8
-   [:a.text-mytheme.text-3xl.font-bold
-    {:class "decoration-mytheme underline-offset-4 hover:text-mytheme/80 select-none"
-     :href (url/put-on-base "/")}
+  [:header {:class "grid items-center grid-cols-[1fr_auto_1fr] gap-2 px-4 py-3"}
+   [:a.justify-self-start {:href (:brother-link cfg/config)}
+    [:div#to-brother]]
+   [:a {:href  (url/put-on-base "/")
+        :class "justify-self-center
+                text-mytheme text-3xl font-bold
+                underline-offset-4
+                hover:text-mytheme/80
+                select-none"}
     (:title cfg/config)]
-   [:div.no-js-only.py-3
-    [:strong "JavaScript is disabled - "] "some enhanced features are unavailable"]])
+   [:div#lang.justify-self-end]])
+
+(def js-warning
+  [:div.no-js-only.py-3.text-center
+   [:strong "JavaScript is disabled - "] "some enhanced features are unavailable"])
 
 (defn main
   "Main layout of the app - everything should inherit from here"
@@ -67,4 +82,5 @@
          [:body
           [:div#root
            (header)
+           js-warning
            content]]))
