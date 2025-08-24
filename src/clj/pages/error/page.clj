@@ -1,6 +1,7 @@
 (ns pages.error.page
   (:require
    [utils.url       :as url]
+   [utils.config    :as cfg]
    [common.layout   :as layout]
    [common.elements :as common]))
 
@@ -8,7 +9,7 @@
   "404 with a funny dude and redirect"
   []
   (layout/main
-   {:title       "BigV - 404 Page not found"
+   {:title       (:title-tag-404 cfg/config)
     :description "Nothing here!"}
    [:container.space-y-8.text-center.flex.flex-col.justify-center
     [:div.relative.flex.items-center.justify-center
