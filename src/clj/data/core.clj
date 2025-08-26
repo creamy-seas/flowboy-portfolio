@@ -1,4 +1,4 @@
-(ns utils.data.core
+(ns data.core
   (:require [clojure.data.json  :as json]
             [clojure.java.io    :as io]
             [clojure.data.csv   :as csv]))

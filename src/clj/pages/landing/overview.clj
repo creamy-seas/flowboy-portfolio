@@ -1,7 +1,7 @@
 (ns pages.landing.overview
   (:require [utils.config           :as cfg]
-            [utils.data.game-stats  :as game-stats]
-            [utils.data.time-log    :as tlog]
+            [data.game-stats  :as game-stats]
+            [data.time-log    :as tlog]
             [utils.url              :as url]))
 
 (def overview-info

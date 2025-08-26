@@ -1,5 +1,5 @@
 (ns pages.gallery.gallery-grid
-  (:require [utils.data.gallery :as gallery]))
+  (:require [data.gallery :as gallery]))
 
 (defn gallery-card-js
   "Single media element in grid view - interaction handled with a gallery-card listener"

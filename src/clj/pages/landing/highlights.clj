@@ -1,16 +1,23 @@
 (ns pages.landing.highlights
-  (:require [utils.date             :as date]
-            [utils.data.highlights  :as highlights]
-            [common.elements        :as common]))
+  (:require [utils.date       :as date]
+            [data.highlights  :as highlights]
+            [common.elements  :as common]
+            [utils.url        :as url]))
 
 (defn highlight-entry
-  "Single highlight entry"
-  [idx {:keys [date highlight age]}]
-  [:li.mb-2 {:key idx}
-   [:div.font-semibold
-    (str "Age " age " - ")
-    [:span.italic (date/cast-date date "MMMM yyyy")]]
-   [:div.text-sm highlight]])
+  "Single highlight entry - if there is an associated gallery entry, provide link :)"
+  [idx {:keys [date highlight age gallery-idx]}]
+  (let [content [:li.mb-2 {:key idx}
+                 [:div.font-semibold
+                  (str "Age " age " - ")
+                  [:span.italic (date/cast-date date "MMMM yyyy")]]
+                 [:div.text-sm highlight]]]
+    (if gallery-idx
+      [:a
+       {:href (url/put-on-base (str "gallery?gallery-idx=" gallery-idx))
+        :class "text-mytheme hover:text-mytheme/80"}
+       content]
+      content)))
 
 (defn render
   "Timeline of big events!"
