@@ -1,5 +1,6 @@
 (ns gallery.modal
-  (:require [utils.dom-operations :as dom]))
+  (:require [utils.dom-operations :as dom]
+            [gallery.collapse     :as collapse]))
 
 (defonce
   ;; Keep the gallery-idx that should be displayed or `nil` if closed"
@@ -22,6 +23,14 @@
     (set! (.-textContent (dom/get-element-by-id "gallery-modal-description")) description)
     (set! (.-textContent (dom/get-element-by-id "gallery-modal-date")) date-str)))
 
+(defn sync-collapse
+  "Ensures that item in view has it's collpase box expanded"
+  [item-season]
+  (doseq [box (dom/get-all ".collapse[gallery-season-key]")]
+        (if (= (.getAttribute box "gallery-season-key") item-season)
+          (collapse/open! box)
+          (collapse/close! box))))
+
 (defn display-gallery-modal
   "Populate modal with information for item gallery-idx in gallery"
   [gallery-idx]
@@ -33,7 +42,8 @@
       ;; Mysterious
       (set-gallery-modal-iframe
        (.-src item) (.-description item) (aget item "date"))
-      (.remove (.-classList (dom/get-element-by-id "gallery-modal")) "hidden"))))
+      (.remove (.-classList (dom/get-element-by-id "gallery-modal")) "hidden")
+      (sync-collapse (aget item "season")))))
 
 (defn close-gallery-modal [event]
   (.stopPropagation event)
@@ -66,12 +76,19 @@
       "Escape" (close-gallery-modal event)
       nil)))
 
+(defn on-load
+  "If ?gallery-idx=123 is present in url args, open the modal"
+  []
+  (when-let [gallery-idx (.get (js/URLSearchParams. (.-search js/location)) "gallery-idx")]
+    (display-gallery-modal gallery-idx)))
+
 (defn ^:export init []
   (dom/add-click-listener-by-id "gallery-modal" close-gallery-modal)
   (dom/add-click-listener-by-id "gallery-modal-future" show-future)
   (dom/add-click-listener-by-id "gallery-modal-past" show-past)
   (doseq [el (dom/get-all ".gallery-card")]
     (dom/add-listener el "click" open-gallery-modal))
-  (dom/add-listener js/document "keydown" handle-keydown))
+  (dom/add-listener js/document "keydown" handle-keydown)
+  (on-load))
 
 (init)

@@ -1,6 +1,6 @@
-(ns utils.data.time-log-test
+(ns data.time-log-test
   (:require [clojure.test         :refer [is deftest testing]]
-            [utils.data.time-log  :as tlg]))
+            [data.time-log  :as tlg]))
 
 (deftest valid-read-time-log
   (testing "good read of time_log.csv with correct fields"

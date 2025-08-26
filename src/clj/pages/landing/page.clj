@@ -2,9 +2,9 @@
   (:require
    [hiccup.page                    :refer [include-js]]
    [utils.url                      :as url]
-   [utils.data.game-stats          :as stats]
-   [utils.data.core                :as data]
-   [utils.data.time-log            :as tlog]
+   [data.game-stats          :as stats]
+   [data.core                :as core]
+   [data.time-log            :as tlog]
    [utils.config                   :as cfg]
    [common.layout                  :as layout]
    [pages.landing.highlights       :as highlights]
@@ -28,8 +28,8 @@
      {:title (:title-tag-landing cfg/config)
       :description "Tracking progress and achievements"
       :extra-elements [profile-image-preload
-                       (data/export-data game-stats "GAME_STATS_DATA")
-                       (data/export-data cumulative-game-stats "CUMULATIVE_GAME_STATS_DATA")]}
+                       (core/export-data game-stats "GAME_STATS_DATA")
+                       (core/export-data cumulative-game-stats "CUMULATIVE_GAME_STATS_DATA")]}
       ;; NOTE: you probably meant Tailwind's `.container` class.
       ;; Use a div with the class instead of a <container> element.
      [:div.container.mx-auto.px-4.space-y-8

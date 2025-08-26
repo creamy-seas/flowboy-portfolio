@@ -1,5 +1,5 @@
-(ns utils.data.gallery
-  (:require [utils.data.core :as data]
+(ns data.gallery
+  (:require [data.core :as core]
             [utils.url       :as url]))
 
 (defn read-gallery
@@ -7,7 +7,7 @@
   - Each enty has both a thumbnail generated (for videos a default icon is used)
   - Each enty has a url made that will be fetched if clicked"
   []
-  (->> (data/read-csv "data/gallery.csv")
+  (->> (core/read-csv "data/gallery.csv")
        (sort-by :date #(compare %2 %1))
        (map-indexed
         (fn [index {:keys [id type] :as entry}]
