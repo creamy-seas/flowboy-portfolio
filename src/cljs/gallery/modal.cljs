@@ -27,9 +27,9 @@
   "Ensures that item in view has it's collpase box expanded"
   [item-season]
   (doseq [box (dom/get-all ".collapse[gallery-season-key]")]
-        (if (= (.getAttribute box "gallery-season-key") item-season)
-          (collapse/open! box)
-          (collapse/close! box))))
+    (if (= (.getAttribute box "gallery-season-key") item-season)
+      (collapse/open! box)
+      (collapse/close! box))))
 
 (defn display-gallery-modal
   "Populate modal with information for item gallery-idx in gallery"
