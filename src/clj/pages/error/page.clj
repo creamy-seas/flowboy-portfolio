@@ -14,10 +14,8 @@
    [:container.space-y-8.text-center.flex.flex-col.justify-center
     [:div.relative.flex.items-center.justify-center
      [:div
-      {:class "absolute inset-0
-               rounded-lg
-               bg-gradient-to-br from-mytheme via-green-300/60 to-transparent
-               filter blur-2xl"}]
+      {:class (str "absolute inset-0 rounded-lg filter blur-2xl"
+                   " bg-gradient-to-br from-mytheme " (:error-bg cfg/config) " to-transparent")}]
      [:img
       {:src   (url/put-on-base "/assets/favicon.svg")
        :alt   "Let's go!"

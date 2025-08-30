@@ -1,0 +1,9 @@
+#+title: Game Stats
+
+|    Season | Date             | Location  | Description  | Face Off | Depart Time                     | Time On Ice | Goals | Passes | Shots | Carries | Takeaways |
+|-----------+------------------+-----------+--------------+----------+---------------------------------+-------------+-------+--------+-------+---------+-----------|
+| 2025-2026 | [2026-05-02 Sat] | Streatham | See if ready |    16:30 | 14:00 leave house               |             |       |        |       |         |           |
+| 2025-2026 | [2026-05-03 Sun] | Cardiff   | See if ready |    16:00 | Day before + hotel. 1100 latest |             |       |        |       |         |           |
+| 2025-2026 | [2026-05-09 Sat] | Bristol   | See if ready |    17:00 | 14:00 leave house               |             |       |        |       |         |           |
+| 2025-2026 | [2026-05-10 Sun] | Slough    | See if ready |    15:20 | After figure skating            |             |       |        |       |         |           |
+| 2025-2026 | [2026-05-16 Sat] | Streatham | See if ready |    16:30 | 14:00 leave house               |             |       |        |       |         |           |

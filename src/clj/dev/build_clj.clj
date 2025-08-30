@@ -2,11 +2,13 @@
   (:require [pages.gallery.page]
             [pages.landing.page]
             [pages.error.page]
+            [pages.mum.page]
             [clojure.java.io :as io]))
 
 (def pages
   {"resources/public/index.html"         pages.landing.page/render
    "resources/public/404.html"           pages.error.page/render
+   "resources/public/mum/index.html"     pages.mum.page/render
    "resources/public/gallery/index.html" pages.gallery.page/render})
 
 (defn- ensure-parent!

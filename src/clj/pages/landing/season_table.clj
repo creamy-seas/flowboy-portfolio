@@ -48,7 +48,7 @@
       (into [:tbody]
             (map-indexed (fn [idx {:keys [season games goals timeOnIceH]}]
                            [:tr {:key idx}
-                            [:td.font-medium.text-my-flame
+                            [:td.font-medium.text-mytheme
                              [:a.underline.hover:text-mytheme {:href (url/put-on-base (str "gallery?season=" season))}
                               season]]
                             [:td games]
