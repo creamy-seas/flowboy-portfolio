@@ -1,23 +1,39 @@
 (ns data.game-stats
-  (:require [data.core :as core]))
+  (:require [data.core :as core]
+            [clojure.string :as str]))
+
+(defn blank-stats?
+  "For stats, we skip rows with missing game stats"
+  [row]
+  (some #(str/blank? (get row %))
+        [:goals :passes :shots :carries :takeaways]))
 
 (defn read-game-stats []
-  (->> (core/read-csv "data/game_stats.csv")
+  (->> (core/read-org-table "data/game_stats.org")
+       (remove blank-stats?)
        (sort-by :date compare)
        (map-indexed
-        (fn [index {:keys [timeOnIceM goals passes shots carries
-                           takeaways location name date] :as entry}]
+        (fn [index {:keys [goals passes shots carries
+                           takeaways date] :as entry}]
           (assoc entry
                  :gameNumber (+ index 1)
-                 :location location
-                 :name name
-                 :date date
-                 :timeOnIceH (Integer/parseInt timeOnIceM)
+                 :date (re-find #"\d{4}-\d{2}-\d{2}" date)
                  :goals (Integer/parseInt goals)
                  :passes (Integer/parseInt passes)
                  :shots (Integer/parseInt shots)
                  :carries (Integer/parseInt carries)
                  :takeaways (Integer/parseInt takeaways))))))
+
+(defn read-game-prep
+  "Data for mum - she needs date, rink faceoff and depart time"
+  []
+  (->> (core/read-org-table "data/game_stats.org")
+       (sort-by :date compare)
+       (map (fn [{:keys [date location faceOff departTime]}]
+              {:date (re-find #"\d{4}-\d{2}-\d{2}" date)
+               :location location
+               :faceOff faceOff
+               :departTime departTime}))))
 
 (defn eval-cumulative-game-stats
   "Provided `game-stats` are totalled up into a cumulative by-game summary"

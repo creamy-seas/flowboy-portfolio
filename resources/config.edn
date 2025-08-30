@@ -2,6 +2,7 @@
  :title-tag-landing "Flowboy Webpage"
  :title-tag-gallery "Flowboy Gallery"
  :title-tag-404     "Flowboy - 404 Page not found"
+ :error-bg          "via-green-300/60"
  :team              "Learn to Skate"
  :name              "Seva Antonov"
  :bday              "2022-03-04"

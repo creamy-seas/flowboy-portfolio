@@ -46,4 +46,7 @@
    [:div.flex-1.space-y-2.md:space-y-4
     [:h2.text-2xl.font-bold (:name cfg/config)]
     [:dl.grid.grid-cols-2.gap-y-2
-     (overview-table)]]])
+     (overview-table)
+     [:a {:href (url/put-on-base "/mum")
+          :class "text-mytheme hover:text-mytheme/80 underline"}
+      "Schedule"]]]])
