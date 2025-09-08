@@ -16,10 +16,11 @@
 
 (defn overview-table
   "Render overview-info as a flat sequence of dt/dd hiccup nodes."
+  ;; TODO
   []
   (mapcat
    (fn [[label value]]
-     (let [key-node [:dt.font-semibold.text-mytheme (str label ":")]
+     (let [key-node [:dt.overview-key (str label ":")]
            href     (when (= label "Season")
                       (url/put-on-base (str "gallery?season=" value)))
            val-node (if href
@@ -47,6 +48,5 @@
     [:h2.text-2xl.font-bold (:name cfg/config)]
     [:dl.grid.grid-cols-2.gap-y-2
      (overview-table)
-     [:a {:href (url/put-on-base "/mum")
-          :class "text-mytheme hover:text-mytheme/80 underline"}
+     [:a.my-hover-link.underline {:href (url/put-on-base "/mum")}
       "Schedule"]]]])

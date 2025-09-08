@@ -65,10 +65,10 @@
    [:a {:href (:brother-link cfg/config)
         :class "justify-self-center md:justify-self-start"}
     [:div#to-brother]]
-   [:a {:href (url/put-on-base "/")
-        :class "justify-self-center
-               text-mytheme text-3xl font-bold
-               underline-offset-4 hover:text-mytheme/80 select-none"}
+   [:a.my-hover-link {:href (url/put-on-base "/")
+                      :class "justify-self-center
+               text-3xl font-bold
+               underline-offset-4 select-none"}
     (:title cfg/config)]
    [:div#lang {:class "justify-self-center md:justify-self-end"}]])
 

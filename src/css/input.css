@@ -34,3 +34,32 @@
     max-width: var(--size-root);
   }
 }
+
+@layer components {
+  /** Site-wide */
+  .my-hover-link { @apply text-mytheme hover:text-mytheme/80; }
+  .my-fat-title { @apply text-2xl font-semibold mb-4; }
+
+  /** Mum's page */
+  .mum-date   { @apply font-medium text-mytheme; }
+  .mum-link   { @apply underline hover:text-mytheme; }
+  .mum-depart { @apply text-mytheme; }
+
+  /** Landing page */
+  .overview-key { @apply font-semibold text-mytheme; }
+
+  li.highlight { @apply mb-2; }
+  .highlight span { @apply italic; }
+
+  .season-table th { @apply text-left; }
+  .season-table td { @apply font-medium text-mytheme; }
+
+  /** Gallery page */
+  .my-collapse summary { @apply text-xl font-semibold bg-mytheme/80 text-bg; }
+  .my-collapse .collapse-content { @apply p-2; }
+  .my-collapse .grid { @apply grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4; }
+  .my-collapse .gallery-card { @apply cursor-pointer; }
+  .my-collapse .img { @apply w-full h-32 object-cover rounded-lg; }
+  .my-collapse .description { @apply text-sm text-center mt-2; }
+  .my-collapse .date { @apply text-xs text-center text-gray-400; }
+}

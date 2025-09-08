@@ -3,5 +3,4 @@
 (defn fat-title
   "Regular title for sections to bring attention"
   [^String text]
-  [:h2.text-2xl.font-semibold.font-mytheme.mb-4
-   text])
+  [:h2.my-fat-title text])

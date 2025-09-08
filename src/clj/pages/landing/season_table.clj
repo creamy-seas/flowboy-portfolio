@@ -43,13 +43,13 @@
       [:thead {:class "bg-mytheme/90"}
        (into [:tr]
              (map-indexed (fn [idx heading]
-                            [:th.text-left {:key idx} heading])
+                            [:th {:key idx} heading])
                           ["Season" "Games" "Goals" "Ice time (h)"]))]
       (into [:tbody]
             (map-indexed (fn [idx {:keys [season games goals timeOnIceH]}]
                            [:tr {:key idx}
-                            [:td.font-medium.text-mytheme
-                             [:a.underline.hover:text-mytheme {:href (url/put-on-base (str "gallery?season=" season))}
+                            [:td
+                             [:a.underline.my-hover-link {:href (url/put-on-base (str "gallery?season=" season))}
                               season]]
                             [:td games]
                             [:td goals]

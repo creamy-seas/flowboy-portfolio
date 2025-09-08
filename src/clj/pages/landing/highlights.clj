@@ -7,15 +7,14 @@
 (defn highlight-entry
   "Single highlight entry - if there is an associated gallery entry, provide link :)"
   [idx {:keys [date highlight age gallery-idx]}]
-  (let [content [:li.mb-2 {:key idx}
+  (let [content [:li.highlight {:key idx}
                  [:div.font-semibold
                   (str "Age " age " - ")
-                  [:span.italic (date/cast-date date "MMMM yyyy")]]
+                  [:span (date/cast-date date "MMMM yyyy")]]
                  [:div.text-sm highlight]]]
     (if gallery-idx
-      [:a
-       {:href (url/put-on-base (str "gallery?gallery-idx=" gallery-idx))
-        :class "text-mytheme hover:text-mytheme/80"}
+      [:a.my-hover-link
+       {:href (url/put-on-base (str "gallery?gallery-idx=" gallery-idx))}
        content]
       content)))
 

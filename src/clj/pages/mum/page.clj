@@ -18,8 +18,9 @@
   []
   [:script
    "var today = new Date();
+    today.setDate(today.getDate() - 1);
     var cutoff = today.getTime();
-    document.querySelectorAll('tr.future-only').forEach(function(tr){
+    document.querySelectorAll('tr').forEach(function(tr){
         var ms = new Date(tr.dataset.date).getTime();
         if (ms < cutoff) tr.hidden = true;
     });"])
@@ -29,24 +30,23 @@
     (layout/main
      {:title "Mum's page"
       :description "Just for mum!"}
-     [:table.table.table-compact.w-full.text-center
+     [:table#mum-table.table.table-compact.w-full.text-left
       [:thead {:class "bg-mytheme/90"}
        (into [:tr]
-             (map-indexed (fn [idx heading]
-                            [:th.text-left {:key idx} heading])
+             (map-indexed (fn [idx heading] [:th {:key idx} heading])
                           ["Date" "Location" "Face Off" "Arrangement"]))]
       (into [:tbody]
             (map-indexed (fn [idx {:keys [date location faceOff departTime]}]
-                           [:tr.text-left.future-only {:key idx :data-date date}
-                            [:td.font-medium.text-mytheme
+                           [:tr. {:key idx :data-date date}
+                            [:td.mum-date
                              (date/cast-date date "d MMM (EEEE)")]
                             [:td
-                             [:a.underline.hover:text-mytheme
+                             [:a.mum-link
                               {:href (gmap-directions-url (str location " ice rink"))
                                :target "_blank"
                                :rel "noopener noreferrer"}
                               location]]
                             [:td faceOff]
-                            [:td.text-mytheme departTime]])
+                            [:td.mum-depart departTime]])
                          game-data))]
      (hide-past-rows))))

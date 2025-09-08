@@ -4,21 +4,21 @@
 (defn gallery-card-js
   "Single media element in grid view - interaction handled with a gallery-card listener"
   [{:keys [thumbnail description date gallery-idx]}]
-  [:div.gallery-card.cursor-pointer {:gallery-idx gallery-idx}
-   [:img.w-full.h-32.object-cover.rounded-lg {:src thumbnail :alt description}]
-   [:p.text-sm.text-center.mt-2 description]
-   [:p.text-xs.text-center.text-gray-400 date]])
+  [:div.gallery-card {:gallery-idx gallery-idx}
+   [:img {:src thumbnail :alt description}]
+   [:p.description description]
+   [:p.date date]])
 
 (defn render-js
   "Grid of media elements passed in as list in argument.
   They are grouped by season and placed in a collapsible element"
   [gallery-data]
-  [:section#gallery-grid.js-only.container.select-none
+  [:section#gallery-grid.js-only.container.select-none.my-collapse
    (for [[season items] (gallery/group-gallery gallery-data)]
-     [:div.collapse.collapse-arrow.rounded-none.rounded-t-lg {:gallery-season-key season}
-      [:summary {:class "collapse-title text-xl font-semibold bg-mytheme/80 text-bg"} season]
-      [:div.collapse-content.p-2
-       [:div.grid.grid-cols-2.sm:grid-cols-3.md:grid-cols-4.gap-4
+     [:div.collapse.collapse-arrow {:gallery-season-key season}
+      [:summary.collapse-title season]
+      [:div.collapse-content
+       [:div.grid
         (map gallery-card-js items)]]])])
 
 (defn gallery-card-no-js
@@ -32,12 +32,12 @@
 (defn render-no-js
   "As JS is disabled - uses the default daisy-ui hiding mechanism"
   [gallery-data]
-  [:section.no-js-only.container.select-none.space-y-4
+  [:section.no-js-only.container.select-none.space-y-4.my-collapse
    (for [[season items] (gallery/group-gallery gallery-data)]
-     [:details.collapse.collapse-arrow.rounded-none.rounded-t-lg {:key season}
-      [:summary {:class "collapse-title text-xl font-semibold bg-mytheme/80 text-bg"} season]
-      [:div.collapse-content.p-2
-       [:div.grid.grid-cols-2.sm:grid-cols-3.md:grid-cols-4.gap-4
+     [:details.collapse.collapse-arrow {:key season}
+      [:summary.collapse-title season]
+      [:div.collapse-content
+       [:div.grid
         (map gallery-card-no-js items)]]])])
 
 (defn render [gallery-data]
