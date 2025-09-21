@@ -22,7 +22,7 @@
 (defn get-legend-title [items game-stats]
   (when-let [item (aget items 0)]
     (let [idx   (js/parseInt (aget item "dataIndex"))
-          game  (nth (game-stats) idx)
+          game  (nth game-stats idx)
           date  (:date       game)
           loc   (:location   game)
           name  (:name       game)]
