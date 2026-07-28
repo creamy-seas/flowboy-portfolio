@@ -12,17 +12,17 @@
     (.format (LocalDate/parse date-str) formatter)))
 
 (defn calculate-age
-  "Given a birth-date string in ISO-8601 (\"yyyy-MM-dd\"), returns age in years relative to
-  pass in date, or today (default)"
+  "Given a birth-date string in ISO-8601 (\"yyyy-MM-dd\"), returns age in years
+  and months relative to it. pass in date, or today (default)"
   ([^String bday-str]
    (calculate-age bday-str (.toString (LocalDate/now))))
   ([^String bday-str
     ^String date-str]
-   (let [bday (LocalDate/parse bday-str)
-         today (LocalDate/parse date-str)
-         years (-> (Period/between bday today)
-                   .getYears)]
-     years)))
+   (let [bday  (LocalDate/parse bday-str)
+      today (LocalDate/parse date-str)
+      period (Period/between bday today)]
+     {:years  (.getYears period)
+      :months (.getMonths period)})))
 
 (defn current-season
   "Returns a map with the current hockey season as two years.

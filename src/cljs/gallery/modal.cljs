@@ -17,7 +17,7 @@
                        "month" "long"
                        "year"  "numeric"}
         locale (aget js/navigator "language")
-        date-str (str (.toLocaleDateString (js/Date. date) locale date-opts) " (" age " years old)")]
+        date-str (str (.toLocaleDateString (js/Date. date) locale date-opts) " (" age ")")]
     (set! (.-src iframe) src)
     (set! (.-title iframe) description)
     (set! (.-textContent (dom/get-element-by-id "gallery-modal-description")) description)
@@ -41,7 +41,7 @@
       ;; Do not touch these - I tried to do aget and they failed, but for data the .-PROP does not work
       ;; Mysterious
       (set-gallery-modal-iframe
-       (.-src item) (.-description item) (aget item "date"))
+       (.-src item) (.-description item) (aget item "date") (aget item "age"))
       (.remove (.-classList (dom/get-element-by-id "gallery-modal")) "hidden")
       (sync-collapse (aget item "season")))))
 
@@ -50,7 +50,7 @@
   (when-let [el (dom/get-element-by-id "gallery-modal")]
     (.add (.-classList el) "hidden")
     (reset! modal-state nil)
-    (set-gallery-modal-iframe nil nil nil)))
+    (set-gallery-modal-iframe nil nil nil nul)))
 
 (defn open-gallery-modal [event]
   (.stopPropagation event)

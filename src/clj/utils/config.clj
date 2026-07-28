@@ -10,6 +10,6 @@
                  io/resource
                  slurp
                  edn/read-string)]
-    (-> base
-        (assoc :age (date/calculate-age (:bday base)))
-        (assoc :season (date/current-season)))))
+    (assoc base
+       :age (:years (date/calculate-age (:bday base)))
+       :season (date/current-season))))

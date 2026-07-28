@@ -24,8 +24,9 @@
                    :src    (str "https://drive.google.com/file/d/"
                                 id
                                 "/preview")
-                   :age (date/calculate-age
-                         (:bday cfg/config) date)))))))
+                   :age (let [{:keys [years months]}
+                              (date/calculate-age (:bday cfg/config) date)]
+                          (format "%d years %d months" years months))))))))
 
 (defn group-gallery
   "Return the gallery entires grouped by season descending"
