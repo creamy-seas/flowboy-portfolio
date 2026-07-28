@@ -19,8 +19,8 @@
   ([^String bday-str
     ^String date-str]
    (let [bday  (LocalDate/parse bday-str)
-      today (LocalDate/parse date-str)
-      period (Period/between bday today)]
+         today (LocalDate/parse date-str)
+         period (Period/between bday today)]
      {:years  (.getYears period)
       :months (.getMonths period)})))
 

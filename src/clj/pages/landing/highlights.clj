@@ -6,7 +6,7 @@
 
 (defn highlight-entry
   "Single timeline highlight."
-    [idx total {:keys [date highlight age gallery-idx]}]
+  [idx total {:keys [date highlight age gallery-idx]}]
   [:li {:key idx}
 
    (when (pos? idx)

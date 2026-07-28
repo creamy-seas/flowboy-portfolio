@@ -50,7 +50,7 @@
   (when-let [el (dom/get-element-by-id "gallery-modal")]
     (.add (.-classList el) "hidden")
     (reset! modal-state nil)
-    (set-gallery-modal-iframe nil nil nil nul)))
+    (set-gallery-modal-iframe nil nil nil nil)))
 
 (defn open-gallery-modal [event]
   (.stopPropagation event)

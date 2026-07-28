@@ -11,5 +11,5 @@
                  slurp
                  edn/read-string)]
     (assoc base
-       :age (:years (date/calculate-age (:bday base)))
-       :season (date/current-season))))
+           :age (:years (date/calculate-age (:bday base)))
+           :season (date/current-season))))
