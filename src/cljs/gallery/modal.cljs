@@ -11,13 +11,13 @@
 
 (defn set-gallery-modal-iframe
   "The iframe is populated with supplied values"
-  [src description date]
+  [src description date age]
   (let [iframe (dom/get-element-by-id "gallery-modal-iframe")
         date-opts #js {"day"   "numeric"
                        "month" "long"
                        "year"  "numeric"}
         locale (aget js/navigator "language")
-        date-str (.toLocaleDateString (js/Date. date) locale date-opts)]
+        date-str (str (.toLocaleDateString (js/Date. date) locale date-opts) " (" age " years old)")]
     (set! (.-src iframe) src)
     (set! (.-title iframe) description)
     (set! (.-textContent (dom/get-element-by-id "gallery-modal-description")) description)

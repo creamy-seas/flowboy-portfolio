@@ -8,4 +8,5 @@
  :bday              "2022-03-04"
  :base              "/flowboy-portfolio"
  :brother-link      "https://creamy-seas.github.io/bigv-portfolio/"
- :goat-counter-url  "https://flowboy-portfolio.goatcounter.com/count"}
+ :goat-counter-url  "https://flowboy-portfolio.goatcounter.com/count"
+ :favourites        []}
