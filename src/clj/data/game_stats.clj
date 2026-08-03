@@ -6,7 +6,7 @@
   "For stats, we skip rows with missing game stats"
   [row]
   (some #(str/blank? (get row %))
-        [:goals :passes :shots :carries :takeaways]))
+        [:goals :apples :passes :shots :carries :takeaways]))
 
 (defn read-game-stats []
   (->> (core/read-org-table "data/game_stats.org")
@@ -14,11 +14,12 @@
        (sort-by :date compare)
        (map-indexed
         (fn [index {:keys [goals passes shots carries
-                           takeaways date] :as entry}]
+                           takeaways date apples] :as entry}]
           (assoc entry
                  :gameNumber (+ index 1)
                  :date (re-find #"\d{4}-\d{2}-\d{2}" date)
                  :goals (Integer/parseInt goals)
+                 :apples (Integer/parseInt apples)
                  :passes (Integer/parseInt passes)
                  :shots (Integer/parseInt shots)
                  :carries (Integer/parseInt carries)
@@ -47,10 +48,11 @@
                          :name (:name current-stats)
                          :date (:date current-stats)
                          :goals (+ (:goals running) (:goals current-stats))
+                         :apples (+ (:apples running) (:apples current-stats))
                          :passes (+ (:passes running) (:passes current-stats))
                          :shots (+ (:shots running) (:shots current-stats))
                          :carries (+ (:carries running) (:carries current-stats))
                          :takeaways (+ (:takeaways running) (:takeaways current-stats))}
                     new-cum-list (conj result new)]
                 (recur (rest remaining) new-cum-list new))))]
-    (accumulate game-stats [] {:goals 0 :passes 0 :shots 0 :carries 0 :takeaways 0})))
+    (accumulate game-stats [] {:goals 0 :apples 0 :passes 0 :shots 0 :carries 0 :takeaways 0})))

@@ -53,6 +53,8 @@
 
   .season-table th { @apply text-left; }
   .season-table td { @apply font-medium text-mytheme; }
+  /** Narrow the columns */
+  .season-table :is(th, td):not(:first-child) { @apply w-px whitespace-nowrap; }
 
   /** Gallery page */
   .my-collapse summary { @apply text-xl font-semibold bg-mytheme/80 text-bg; }

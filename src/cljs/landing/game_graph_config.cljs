@@ -14,10 +14,11 @@
 
 (defn make-line-collection [game-stats]
   [(make-line game-stats "Goals"     :goals     "#eec900")
+   (make-line game-stats "Apples"    :apples "#ff1493")
    (make-line game-stats "Shots"     :shots     "#ff7300")
-   (make-line game-stats "Passes"    :passes    "#00bfff")
+   (make-line game-stats "Passes"    :passes    "#bc8f8f")
    (make-line game-stats "Carries"   :carries   "#82ca9d")
-   (make-line game-stats "Takeaways" :takeaways "#ff1493")])
+   (make-line game-stats "Takeaways" :takeaways "#00bfff")])
 
 (defn get-legend-title [items game-stats]
   (when-let [item (aget items 0)]
