@@ -57,12 +57,12 @@
   (display-gallery-modal
    (js/parseInt (.getAttribute (.-currentTarget event) "gallery-idx"))))
 
-(defn show-future [event]
+(defn show-past [event]
   (.stopPropagation event)
   (display-gallery-modal
    (max 0 (- @modal-state 1))))
 
-(defn show-past [event]
+(defn show-future [event]
   (.stopPropagation event)
   (display-gallery-modal (min
                           max-gallery-idx*

@@ -11,7 +11,7 @@
   []
   (let [favourites (:favourites cfg/config)]
     (->> (core/read-csv "data/gallery.csv")
-         (sort-by :date #(compare %2 %1))
+         (sort-by :date)
          (map-indexed
           (fn [index {:keys [id type description date] :as entry}]
             (assoc entry
@@ -26,7 +26,8 @@
                                 "/preview")
                    :age (let [{:keys [years months]}
                               (date/calculate-age (:bday cfg/config) date)]
-                          (format "%d years %d months" years months))))))))
+                          (format "%d years %d months" years months)))))
+         (sort-by :date #(compare %2 %1)))))
 
 (defn group-gallery
   "Return the gallery entires grouped by season descending"

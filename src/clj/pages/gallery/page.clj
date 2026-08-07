@@ -14,7 +14,7 @@
     (layout/main
      {:title (:title-tag-gallery cfg/config)
       :description "A showcase of fun and action moments"
-      :extra-elements [(core/export-data gallery-data "GALLERY_DATA")
+      :extra-elements [(core/export-data (sort-by :gallery-idx gallery-data) "GALLERY_DATA")
                        (core/export-data (dec (count gallery-data)) "GALLERY_DATA_MAX_IDX")]}
      (grid/render gallery-data)
      (modal/render)
