@@ -21,7 +21,7 @@
     "postnuke": "mkdir resources/public && mv resources/assets resources/public/assets && npm run postinstall && echo Done 💣 && tree resources/public",
     "dev": "npm run nuke && exec concurrently --kill-others-on-fail \"npm run clj:build && npm run clj:dev\" \"npm run css:dev\" \"npm run cljs:dev\" \"npm run serve\" \"wait-on http://localhost:5173 && npm run browser\"",
     "build": "npm run nuke && exec concurrently --kill-others-on-fail \"npm run clj:build\" \"npm run css:build\" \"npm run cljs:build\" \"npm run serve\" \"wait-on http://localhost:5173 && npm run browser\"",
-    "publish": "tree --du -h resources/public && gh-pages -d resources/public"
+    "publish": "tree --du -h resources/public && gh-pages -d resources/public --cname flowboy.antonov-hq.com"
   },
   "devDependencies": {
     "@tailwindcss/cli": "4.1.11",

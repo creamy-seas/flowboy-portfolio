@@ -38,7 +38,7 @@
 
    ;; --- Meta & base ---
    [:meta {:charset "UTF-8"}]
-   [:base {:href (:base cfg/config)}]
+   [:base {:href ""}]
    [:title title]
    [:meta {:name "viewport" :content "width=device-width, initial-scale=1.0"}]
    [:meta {:name "description" :content description}]
