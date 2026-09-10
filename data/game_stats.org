@@ -1,9 +1,28 @@
 #+title: Game Stats
 
-|    Season | Date             | Location  | Description  | Face Off | Depart Time                     | Time On Ice | Goals | Apples | Passes | Shots | Carries | Takeaways |
-|-----------+------------------+-----------+--------------+----------+---------------------------------+-------------+-------+--------+--------+-------+---------+-----------|
-| 2025-2026 | [2026-05-02 Sat] | Streatham | See if ready |    16:30 | 14:00 leave house               |             |       |        |        |       |         |           |
-| 2025-2026 | [2026-05-03 Sun] | Cardiff   | See if ready |    16:00 | Day before + hotel. 1100 latest |             |       |        |        |       |         |           |
-| 2025-2026 | [2026-05-09 Sat] | Bristol   | See if ready |    17:00 | 14:00 leave house               |             |       |        |        |       |         |           |
-| 2025-2026 | [2026-05-10 Sun] | Slough    | See if ready |    15:20 | After figure skating            |             |       |        |        |       |         |           |
-| 2025-2026 | [2026-05-16 Sat] | Streatham | See if ready |    16:30 | 14:00 leave house               |             |       |        |        |       |         |           |
+|    Season | Date             | Location         | Description | Face Off | Depart Time                         | Time On Ice | Goals | Apples | Passes | Shots | Carries | Takeaways | Improvements |
+|-----------+------------------+------------------+-------------+----------+-------------------------------------+-------------+-------+--------+--------+-------+---------+-----------+--------------|
+| 2026-2027 | [2026-09-12 Sat] | Slough           | Cross ice   |    17:30 | 15:00 leave house                   |             |       |        |        |       |         |           |              |
+| 2026-2027 | [2026-09-20 Sun] | Guildford        | Cross ice   |    08:30 | 06:45 leave house                   |             |       |        |        |       |         |           |              |
+| 2026-2027 | [2026-09-20 Sun] | Swindon          | Cross ice   |    13:10 | After figure skating                |             |       |        |        |       |         |           |              |
+| 2026-2027 | [2026-09-27 Sun] | Solent           | Cross ice   |    16:15 | After figure skating                |             |       |        |        |       |         |           |              |
+| 2026-2027 | [2026-10-04 Sun] | Swindon          | Cross ice   |    13:10 | After figure skating                |             |       |        |        |       |         |           |              |
+| 2026-2027 | [2026-10-25 Sun] | Alexandra Palace | Cross ice   |    16:45 | After figure skating                |             |       |        |        |       |         |           |              |
+| 2026-2027 | [2026-10-31 Sat] | Oxford           | Cross ice   |    16:40 | Morning + day out. 1400 latest      |             |       |        |        |       |         |           |              |
+| 2026-2027 | [2026-11-08 Sun] | Swindon          | Cross ice   |    13:10 | After figure skating                |             |       |        |        |       |         |           |              |
+| 2025-2026 | [2026-11-14 Sat] | Swindon          | Cross ice   |    13:10 | 11:10 leave house                   |             |       |        |        |       |         |           |              |
+| 2026-2027 | [2026-11-15 Sun] | Guildford        | Cross ice   |    08:30 | 06:45 leave house                   |             |       |        |        |       |         |           |              |
+| 2026-2027 | [2026-11-21 Sat] | Cardiff          | Cross ice   |    16:00 | 11:00 leave house                   |             |       |        |        |       |         |           |              |
+| 2026-2027 | [2026-11-29 Sun] | Basingstoke      | Cross ice   |    16:15 | 14:30 leave house                   |             |       |        |        |       |         |           |              |
+| 2026-2027 | [2026-11-29 Sun] | Oxford           | Cross ice   |    16:40 | After figure skating                |             |       |        |        |       |         |           |              |
+| 2026-2027 | [2026-12-05 Sat] | Solent           | Cross ice   |    16:25 | 10:00 with visit to docks           |             |       |        |        |       |         |           |              |
+| 2026-2027 | [2026-12-20 Sun] | Cardiff          | Cross ice   |    16:00 | Day before + hotel. 11:00 latest    |             |       |        |        |       |         |           |              |
+| 2026-2027 | [2027-02-13 Sat] | Slough           | Cross ice   |    17:30 | 15:00 leave house                   |             |       |        |        |       |         |           |              |
+| 2026-2027 | [2027-02-20 Sat] | Milton Keynes    | Cross ice   |    16:15 | 14:00 leave house                   |             |       |        |        |       |         |           |              |
+| 2026-2027 | [2027-02-28 Sun] | Milton Keynes    | Cross ice   |    16:15 | 14:00 leave house                   |             |       |        |        |       |         |           |              |
+| 2026-2027 | [2027-03-07 Sun] | Slough           | Cross ice   |    15:15 | After figure skating                |             |       |        |        |       |         |           |              |
+| 2026-2027 | [2027-04-03 Sat] | Slough           | Cross ice   |    17:30 | 15:00 leave house                   |             |       |        |        |       |         |           |              |
+| 2026-2027 | [2027-04-10 Sat] | Slough           | Cross ice   |    17:30 | 15:00 leave house                   |             |       |        |        |       |         |           |              |
+| 2026-2027 | [2027-04-17 Sat] | Bristol          | Cross ice   |    16:45 | 14:00 leave house or 10:00 and walk |             |       |        |        |       |         |           |              |
+| 2026-2027 | [2027-05-01 Sat] | Bristol          | Cross ice   |    16:00 | 13:00 leave house or 10:00 and walk |             |       |        |        |       |         |           |              |
+| 2026-2027 | [2027-05-16 Sun] | Basingstoke      | Cross ice   |    16:15 | 14:30 leave house                   |             |       |        |        |       |         |           |              |
