@@ -2,10 +2,7 @@
 
 |    Season | Date             | Location         | Description | Face Off | Depart Time                         | Time On Ice | Goals | Apples | Passes | Shots | Carries | Takeaways | Improvements |
 |-----------+------------------+------------------+-------------+----------+-------------------------------------+-------------+-------+--------+--------+-------+---------+-----------+--------------|
-| 2026-2027 | [2026-09-12 Sat] | Slough           | Cross ice   |    17:30 | 15:00 leave house                   |             |       |        |        |       |         |           |              |
-| 2026-2027 | [2026-09-20 Sun] | Guildford        | Cross ice   |    08:30 | 06:45 leave house                   |             |       |        |        |       |         |           |              |
-| 2026-2027 | [2026-09-20 Sun] | Swindon          | Cross ice   |    13:10 | After figure skating                |             |       |        |        |       |         |           |              |
-| 2026-2027 | [2026-09-27 Sun] | Solent           | Cross ice   |    16:15 | After figure skating                |             |       |        |        |       |         |           |              |
+| 2026-2027 | [2026-09-27 Sun] | Solent           | Cross ice   |    16:15 | After figure skating                |          15 |     0 |      1 |      0 |     0 |       3 |         2 | Don't fall!  |
 | 2026-2027 | [2026-10-04 Sun] | Swindon          | Cross ice   |    13:10 | After figure skating                |             |       |        |        |       |         |           |              |
 | 2026-2027 | [2026-10-25 Sun] | Alexandra Palace | Cross ice   |    16:45 | After figure skating                |             |       |        |        |       |         |           |              |
 | 2026-2027 | [2026-10-31 Sat] | Oxford           | Cross ice   |    16:40 | Morning + day out. 1400 latest      |             |       |        |        |       |         |           |              |
