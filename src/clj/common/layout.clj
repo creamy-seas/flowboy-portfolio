@@ -84,7 +84,14 @@
                text-3xl font-bold
                underline-offset-4 select-none"}
     (:title cfg/config)]
-   [:div#lang {:class "justify-self-center md:justify-self-end"}]])
+   [:div.flex.items-center.gap-4.justify-self-center.md:justify-self-end
+    [:div#lang]
+    [:a {:href (:instagram cfg/config)
+         :target "_blank"
+         :rel "noopener noreferrer"}
+     [:img.w-10.h-10
+      {:src (url/put-on-base "/assets/instagram.svg")
+       :alt "Instagram"}]]]])
 
 (def js-warning
   [:div.no-js-only.py-3.text-center

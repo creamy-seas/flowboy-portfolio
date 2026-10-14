@@ -8,5 +8,7 @@
  :bday              "2022-03-04"
  :brother-link      "https://bigv.antonov-hq.com"
  :domain            "https://flowboy.antonov-hq.com"
+ ;; TODO: change this to his link
+ :instagram         "https://www.instagram.com/bigv.antonov"
  :goat-counter-url  "https://flowboy-portfolio.goatcounter.com/count"
  :favourites        []}
