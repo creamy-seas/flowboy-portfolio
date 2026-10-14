@@ -29,7 +29,7 @@
    [:meta {:property "og:url"
            :content (url/absolute-url canonical-path)}]
    [:meta {:property "og:image"
-           :content (url/absolute-url "/assets/profile.avif")}]
+           :content (:open-graph-img cfg/config)}]
 
    ;; Flip <html> class from no-js -> js ASAP (runs before first paint) if js is enabled
    [:script "(d=>d.classList.replace('no-js','js'))(document.documentElement)"]
