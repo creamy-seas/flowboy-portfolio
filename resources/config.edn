@@ -1,0 +1,17 @@
+{:title             "🏒 Flowboy Webpage 🏒"
+ :title-tag-landing "Flowboy | Junior Ice Hockey"
+ :title-tag-gallery "Flowboy Gallery | Junior Ice Hockey"
+ :title-tag-404     "Flowboy - 404 Page not found"
+ :error-bg          "via-green-300/60"
+ :team              "Slough Jets U10s"
+ :name              "Seva Antonov"
+ :bday              "2022-03-04"
+ :brother-link      "https://bigv.antonov-hq.com"
+ :domain            "https://flowboy.antonov-hq.com"
+ ;; TODO: change this to his link
+ :instagram         ""
+ :goat-counter-url  "https://flowboy-portfolio.goatcounter.com/count"
+ :open-graph-img    "https://bigv-media.antonov-hq.com/profile/flowboy-profile.jpg"
+ :cdn-url           "https://bigv-media.antonov-hq.com/"
+ :gallery-provider  :google-drive
+ :favourites        []}
