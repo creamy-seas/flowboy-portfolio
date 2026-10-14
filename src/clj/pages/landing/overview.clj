@@ -46,7 +46,13 @@
                 w-full md:w-[360px]
                 h-auto"}]
    [:div.flex-1.space-y-2.md:space-y-4
-    [:h1.text-2xl.font-bold (:name cfg/config)]
+    [:div.flex.items-end.gap-3
+     [:h1.text-2xl.font-bold (:name cfg/config)]
+     [:a.text-blue-500.hover:underline.text-sm
+      {:href (str "https://www.instagram.com/" (:instagram cfg/config))
+       :target "_blank"
+       :rel "noopener noreferrer"}
+      (str "@" (:instagram cfg/config))]]
     [:dl.grid.grid-cols-2.gap-y-2
      (overview-table)
      [:a.my-hover-link.underline {:href (url/put-on-base "/mum")}

@@ -86,7 +86,7 @@
     (:title cfg/config)]
    [:div.flex.items-center.gap-4.justify-self-center.md:justify-self-end
     [:div#lang]
-    [:a {:href (:instagram cfg/config)
+    [:a {:href (str "https://www.instagram.com/" (:instagram cfg/config))
          :target "_blank"
          :rel "noopener noreferrer"}
      [:img.w-10.h-10
