@@ -30,9 +30,10 @@
   []
   (->> (core/read-org-table "data/game_stats.org")
        (sort-by :date compare)
-       (map (fn [{:keys [date location faceOff departTime]}]
+       (map (fn [{:keys [date location description faceOff departTime]}]
               {:date (re-find #"\d{4}-\d{2}-\d{2}" date)
                :location location
+               :description description
                :faceOff faceOff
                :departTime departTime}))))
 

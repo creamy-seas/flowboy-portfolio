@@ -34,12 +34,13 @@
       [:thead {:class "bg-mytheme/90"}
        (into [:tr]
              (map-indexed (fn [idx heading] [:th {:key idx} heading])
-                          ["Date" "Location" "Face Off" "Arrangement"]))]
+                          ["Date" "Competition" "Location" "Face Off" "Arrangement"]))]
       (into [:tbody]
-            (map-indexed (fn [idx {:keys [date location faceOff departTime]}]
+            (map-indexed (fn [idx {:keys [date location faceOff departTime description]}]
                            [:tr. {:key idx :data-date date}
                             [:td.mum-date
                              (date/cast-date date "d MMM (EEEE)")]
+                            [:td description]
                             [:td
                              [:a.mum-link
                               {:href (gmap-directions-url (str location " ice rink"))
