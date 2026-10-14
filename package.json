@@ -17,8 +17,8 @@
     "preview": "exec concurrently --kill-others-on-fail \"npm run serve\" \"wait-on http://localhost:5173 && npm run browser\"",
     "lint": "clj -M:lint && clj -M:fix",
     "sync": "python src/python/gsync.py",
-    "nuke": "echo Nuking everything 💣 &&  mv resources/public/assets resources/assets && rm -rf resources/public",
-    "postnuke": "mkdir resources/public && mv resources/assets resources/public/assets && npm run postinstall && echo Done 💣 && tree resources/public",
+    "nuke": "echo Nuking everything 💣 && mv resources/public/assets resources/ && mv resources/public/robots.txt resources/public/sitemap.xml resources/ && rm -rf resources/public",
+    "postnuke": "mkdir -p resources/public && mv resources/assets resources/robots.txt resources/sitemap.xml resources/public/ && npm run postinstall && echo Done 💣 && tree resources/public",
     "dev": "npm run nuke && exec concurrently --kill-others-on-fail \"npm run clj:build && npm run clj:dev\" \"npm run css:dev\" \"npm run cljs:dev\" \"npm run serve\" \"wait-on http://localhost:5173 && npm run browser\"",
     "build": "npm run nuke && exec concurrently --kill-others-on-fail \"npm run clj:build\" \"npm run css:build\" \"npm run cljs:build\" \"npm run serve\" \"wait-on http://localhost:5173 && npm run browser\"",
     "publish": "tree --du -h resources/public && gh-pages -d resources/public --cname flowboy.antonov-hq.com"

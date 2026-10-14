@@ -9,13 +9,27 @@
                      (:csp-nonce cfg/config) (vector :nonce (:csp-nonce cfg/config)))])
 
 (defn head
-  "Head of the page, with `title`, `descriptions` and optional `extra-elements`"
-  [{:keys [title description extra-elements]
+  "Head of the page, with `title`, `descriptions`, `canonical-path` of the page and optional `extra-elements`"
+  [{:keys [title description canonical-path extra-elements]
     :or   {extra-elements []}}]
   [:head
    [:link {:rel "prefetch"
            :as "image"
            :href (url/put-on-base "/assets/brother-to-brother.svg")}]
+
+   ;; Tells search engines the preferred URL to index, avoiding duplicate pages
+   ;; caused by query parameters such as ?season=2025-2026.
+   [:link {:rel "canonical"
+           :href (url/absolute-url canonical-path)}]
+
+   ;; Open Graph metadata for social media link previews
+   [:meta {:property "og:title" :content title}]
+   [:meta {:property "og:description" :content description}]
+   [:meta {:property "og:type" :content "website"}]
+   [:meta {:property "og:url"
+           :content (url/absolute-url canonical-path)}]
+   [:meta {:property "og:image"
+           :content (url/absolute-url "/assets/profile.avif")}]
 
    ;; Flip <html> class from no-js -> js ASAP (runs before first paint) if js is enabled
    [:script "(d=>d.classList.replace('no-js','js'))(document.documentElement)"]
@@ -78,10 +92,11 @@
 
 (defn main
   "Main layout of the app - everything should inherit from here"
-  [{:keys [title description extra-elements]} & content]
+  [{:keys [title description canonical-path extra-elements]} & content]
   (html5 {:class "no-js"}
          (head {:title            title
                 :description      description
+                :canonical-path   (or canonical-path "/")
                 :extra-elements   extra-elements})
          [:body
           [:div#root

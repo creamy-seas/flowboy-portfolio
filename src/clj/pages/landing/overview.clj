@@ -37,7 +37,8 @@
   [:section {:class "flex flex-col md:flex-row items-center p-6"}
    [:img
     {:src    (url/put-on-base "/assets/profile.avif")
-     :alt    "Player Photo"
+     :alt    (str (:name cfg/config)
+                  " - Junior ice hockey player")
      :class  "block flex-shrink-0
                 order-first md:order-last
                 rounded-[5%]
@@ -45,7 +46,7 @@
                 w-full md:w-[360px]
                 h-auto"}]
    [:div.flex-1.space-y-2.md:space-y-4
-    [:h2.text-2xl.font-bold (:name cfg/config)]
+    [:h1.text-2xl.font-bold (:name cfg/config)]
     [:dl.grid.grid-cols-2.gap-y-2
      (overview-table)
      [:a.my-hover-link.underline {:href (url/put-on-base "/mum")}

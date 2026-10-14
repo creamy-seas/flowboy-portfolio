@@ -26,7 +26,9 @@
         cumulative-game-stats (stats/eval-cumulative-game-stats game-stats)]
     (layout/main
      {:title (:title-tag-landing cfg/config)
-      :description "Tracking progress and achievements"
+      :description (str "Follow " (:name cfg/config)
+                        "'s junior ice hockey journey with Slough Jets Juniors. "
+                        "Explore his hockey development, achievements, tournaments and training.")
       :extra-elements [profile-image-preload
                        (core/export-data game-stats "GAME_STATS_DATA")
                        (core/export-data cumulative-game-stats "CUMULATIVE_GAME_STATS_DATA")]}
