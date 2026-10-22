@@ -22,7 +22,7 @@
    (fn [[label value]]
      (let [key-node [:dt.overview-key (str label ":")]
            href     (when (= label "Season")
-                      (url/put-on-base (str "gallery?season=" value)))
+                      (url/put-on-base (str "gallery/?season=" value)))
            val-node (if href
                       [:a.underline.hover:text-mytheme
                        {:href href}

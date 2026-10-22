@@ -4,6 +4,6 @@
 (defn render
   "Link to gallery page - nice, fat, and center of page"
   []
-  [:section.text-center.p-6.my-hover-link [:a {:href (url/put-on-base "/gallery")
+  [:section.text-center.p-6.my-hover-link [:a {:href (url/put-on-base "/gallery/")
                                                :class "text-3xl font-bold underline underline-offset-4"}
                                            "View Gallery"]])
